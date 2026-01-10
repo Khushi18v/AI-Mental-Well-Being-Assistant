@@ -1,0 +1,207 @@
+/* -------- ROOT COLORS & GLOBALS -------- */
+:root {
+    --accent: #8fc1a9;
+    --accent-strong: #4f8265;
+    --glass-bg: rgba(143, 193, 169, 0.22);
+    --card-bg: rgba(143, 193, 169, 0.30);
+    --text-dark: #1b3a2b;
+    --text-light: #e3f7ed;
+    --radius: 20px;
+    --border-dark: #2a5c42;
+}
+
+body {
+    border: 10px solid red !important;
+}
+
+/* -------- BACKGROUND -------- */
+html, body, [data-testid="stAppViewContainer"] {
+    background: linear-gradient(135deg, #d0edda 0%, #e4f7ec 45%, #f2fcf6 100%);
+}
+
+/* -------- GLASS CARD -------- */
+.glass {
+    background: rgba(143, 193, 169, 0.28);
+    border-radius: var(--radius);
+    padding: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.50);
+    box-shadow: 0 8px 28px rgba(120, 200, 160, 0.24);
+    backdrop-filter: blur(14px) saturate(180%);
+}
+
+/* -------- HERO -------- */
+.hero {
+    padding: 35px 30px;
+    margin-bottom: 18px;
+    border-radius: 24px;
+    background: rgba(143, 193, 169, 0.30);
+    box-shadow: 0 6px 20px rgba(100, 180, 140, 0.25);
+    backdrop-filter: blur(15px) saturate(180%);
+}
+
+h1 {
+    font-size: 2.4rem;
+    margin: 0;
+    font-weight: 700;
+    color: var(--text-dark) !important;
+    text-shadow: 0 0 8px rgba(120, 200, 160, 0.25);
+}
+
+h2, h3 {
+    margin: 6px 0 12px 0;
+    font-weight: 600;
+    color: #2a5c42 !important;
+}
+
+.muted {
+    color: #3b7a53;
+    font-size: 1rem;
+    margin-top: 8px;
+}
+
+/* -------- SIDEBAR -------- */
+section[data-testid="stSidebar"] {
+    background: linear-gradient(135deg, rgba(143, 193, 169, 0.45), rgba(120, 180, 150, 0.32)) !important;
+    backdrop-filter: blur(28px) saturate(160%) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.55) !important;
+    padding: 32px 24px !important;
+    box-shadow: 0 0 35px rgba(120, 200, 160, 0.25);
+    animation: floatSlide 0.8s ease both;
+    min-width: auto !important;
+    border-radius: 0 20px 20px 0;
+    width: 280px !important;
+    max-width: 300px !important;
+}
+
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] h2 {
+    color: var(--text-dark) !important;
+    margin-bottom: 20px !important;
+}
+
+@keyframes floatSlide {
+    from { transform: translateX(-20px); opacity: 0; }
+    to   { transform: translateX(0); opacity: 1; }
+}
+
+/* -------- INPUTS -------- */
+textarea, input, .stTextInput input {
+    background: rgba(240, 250, 245, 0.95) !important;
+    border-radius: 14px !important;
+    border: 1px solid rgba(150, 200, 170, 0.35) !important;
+    padding: 10px 14px !important;
+    color: var(--text-dark) !important;
+    box-shadow: inset 0 2px 4px rgba(130, 200, 170, 0.18);
+}
+
+textarea { margin-bottom: 10px !important; }
+
+/* -------- HIDE HEADER -------- */
+header[data-testid="stHeader"] {
+    display: none !important;
+}
+
+/* -------- FOOTER -------- */
+.footer {
+    text-align: center;
+    margin-top: 25px;
+    opacity: 0.75;
+    font-size: 0.9rem;
+    color: #2a5c42;
+}
+
+/* -------- SECTION TITLE -------- */
+.section-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--accent-strong);
+    margin: 6px 0px 6px 4px !important;
+    padding-bottom: 4px;
+    border-left: 6px solid var(--accent-strong);
+    padding-left: 12px;
+    text-shadow: 0 1px 3px rgba(80, 150, 120, 0.25);
+}
+
+/* -------- RADIO BUTTONS -------- */
+div[role="radiogroup"] label {
+    border-radius: 14px !important;
+    padding: 14px !important;
+    margin-bottom: 10px !important;
+    background: rgba(143,193,169,0.35) !important;
+    border: 1px solid #4f8265 !important;
+    cursor: pointer;
+    transition: 0.25s ease !important;
+}
+
+div[role="radiogroup"] label:hover {
+    background: rgba(143,193,169,0.55) !important;
+}
+
+/* hide default radio */
+div[role="radiogroup"] > label > div:first-child {
+    display: none !important;
+}
+
+/* selected state */
+div[role="radiogroup"] input:checked + div {
+    background: #4f8265 !important;
+    color: white !important;
+    font-weight: 600 !important;
+    border-radius: 14px !important;
+    padding: 14px !important;
+    box-shadow: 0 0 12px rgba(79,130,101,0.55) !important;
+    border: 1px solid #4f8265 !important;
+}
+
+div[role="radiogroup"] input:checked + div,
+div[role="radiogroup"] input:checked + div * {
+    background: #4f8265 !important;
+    color: white !important;
+}
+
+/* -------- RESPONSIVE -------- */
+@media (max-width: 900px) {
+    section[data-testid="stSidebar"] {
+        width: 100% !important;
+        min-width: 100% !important;
+        border-radius: 0 !important;
+        padding: 20px !important;
+    }
+
+    .hero, .glass { padding: 18px !important; }
+
+    textarea, input, .stTextInput input {
+        font-size: 15px !important;
+        padding: 8px 12px !important;
+    }
+
+    .section-title { font-size: 1.2rem !important; }
+
+    [data-testid="stRadio"] div[role="radiogroup"] > label {
+        padding: 12px 14px !important;
+        font-size: 15px !important;
+    }
+}
+
+@media (max-width: 600px) {
+    h1 { font-size: 1.8rem !important; }
+    h2, h3 { font-size: 1.1rem !important; }
+    .hero { padding: 16px !important; }
+    .section-title { font-size: 1.15rem !important; }
+    textarea { min-height: 130px !important; }
+
+    [data-testid="stRadio"] div[role="radiogroup"] > label {
+        padding: 10px 12px !important;
+        font-size: 14px !important;
+    }
+}
+
+@media (max-width: 400px) {
+    h1 { font-size: 1.6rem !important; }
+    .section-title { font-size: 1.05rem !important; }
+
+    [data-testid="stRadio"] div[role="radiogroup"] > label {
+        padding: 8px 10px !important;
+        font-size: 13px !important;
+    }
+}
