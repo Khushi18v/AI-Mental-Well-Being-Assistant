@@ -34,8 +34,8 @@ Create a .env file and add:
 OPENAI_API_KEY=your_api_key_here
 
 Run the Application streamlit run app.py
-Open in browser:
-http://localhost:8501
+Open in browser
+
 
 Project Structure /app.py - Main application /agents.py - AI agents for emotional support /sentiment.py - Sentiment analysis module /storage.py - Local JSON storage /tools_ui.py - UI modules /data/journal.json - Journal entries
 
